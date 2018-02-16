@@ -1,0 +1,53 @@
+@import '~sass/colors';
+@import '~sass/standards';
+
+.nav-wrapper {
+    height: 60px;
+    overflow: hidden;
+    background: linear-gradient(to right, #FF7400, #FF0090);
+
+    .nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        line-height: 20px;
+        display: inline-flex;
+        max-width: 100%;
+
+        li {
+            flex: 1;
+            padding: 20px 25px;
+            text-transform: uppercase;
+            color: white;
+            letter-spacing: 1px;
+            transition: 200ms;
+            text-align: center;
+            font-weight: 700;
+
+            &:hover:not(.nav-logo) {
+                background: white;
+                color: $shadow-black;
+                cursor: pointer;
+            }
+
+            &.nav-logo {
+                padding: 0 25px;
+                height: 60px;
+                flex: none;
+                pointer-events: none;
+        
+                span {
+                    display: inline-block;
+                    height: 60px;
+                    vertical-align: middle;
+                    line-height: 60px;
+                }
+
+                .nav-logo-text {
+                    margin-left: 5px;
+                    font: 240% $font-lime;
+                }
+            }
+        }
+    }
+}

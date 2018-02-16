@@ -1,0 +1,25 @@
+@import './colors';
+@import './standards';
+
+body {
+    margin: 0;
+    font: 100% $font-roboto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: $bg-white;
+}
+
+.wrapper {
+    &-sm {
+        padding: $ui-sm;
+    }
+    &-md {
+        padding: $ui-md;
+    }
+    &-lg {
+        padding: $ui-lg;
+    }
+    &-xl {
+        padding: $ui-xl;
+    }
+}
