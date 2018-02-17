@@ -3,10 +3,15 @@
 
 body {
     margin: 0;
-    font: 100% $font-roboto;
+    font: 100% $font-cantarell;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: $bg-white;
+}
+
+section {
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 .wrapper {

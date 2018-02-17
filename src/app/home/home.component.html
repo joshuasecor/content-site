@@ -1,19 +1,22 @@
 <section id="home">
   <div class="home-wrapper wrapper-sm">
-    <h2 *ngIf="homeContent">{{ homeContent.num_results }} Results</h2>
-    <div *ngIf="homeContentResults">
-      <div *ngFor="let result of homeContentResults">
-        <div>
-          <img *ngIf="result.multimedia[4]" [src]="result.multimedia[4].url" />
-          <img *ngIf="!result.multimedia[4] && result.multimedia[3]" [src]="result.multimedia[3].url" />
-          <img *ngIf="!result.multimedia[4] && !result.multimedia[3] && result.multimedia[2]" [src]="result.multimedia[2].url" />
-          <img *ngIf="!result.multimedia[4] && !result.multimedia[3] && !result.multimedia[2] && result.multimedia[1]" [src]="result.multimedia[1].url" />
-          <img *ngIf="!result.multimedia[4] && !result.multimedia[3] && !result.multimedia[2] && !result.multimedia[1] && result.multimedia[0]" [src]="result.multimedia[0].url" />
+    <!-- <h2 *ngIf="homeContent">{{ homeContent.num_results }} Results</h2> -->
+    <div *ngIf="homeContentResults" class="home-content">
+
+      <div *ngFor="let result of homeContentResults | slice:0:imagesToLoad" class="content-block" [ngClass]="{'loaded': imagesLoaded >= imagesToLoad}">
+        
+        <div class="content-img">
+          <img *ngIf="result.multimedia[4]" [src]="result.multimedia[4].url" (load)="loadImage()" />
+          <span *ngIf="!result.multimedia[4]" [inlineSVG]="limeSVG" (load)="loadImage()"></span>
         </div>
-        <div class="nav-logo">
-          <span [inlineSVG]="limeSVG"></span>
+
+        <div class="content-text">
+            <p class="content-section">{{ result.section }}</p>
+          <p class="content-title">{{ result.title }}</p>
         </div>
+
       </div>
+
     </div>
   </div>
 </section>

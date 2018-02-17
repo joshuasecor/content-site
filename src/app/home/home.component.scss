@@ -1,2 +1,100 @@
 @import '~sass/colors';
 @import '~sass/standards';
+
+.home-wrapper {
+
+    .home-content {
+        column-count: 3;
+        column-gap: 5px;
+
+        @media #{$tablet} {
+            column-count: 2;
+        }
+
+        @media #{$mobile} {
+            column-count: 1;
+        }
+
+        .content-block {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            position: relative;
+            transition: $transition-short;
+            opacity: 0;
+
+            &.loaded {
+                opacity: 1;
+            }
+            
+            .content-img {
+
+                &::after {
+                    background: linear-gradient(to bottom, $ocean-blue-25 0%, black 100%);
+                    bottom: 0;
+                    content: "";
+                    left: 0;
+                    opacity: 0.75;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    z-index: 2;
+                    margin-bottom: 4px;
+                    transition: $transition-short;
+                }
+
+                img {
+                    width: 100%;
+                    max-height: 100%;
+                }
+            }
+
+            .content-text {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: 4;
+                margin-bottom: 4px;
+                padding: $ui-md;
+                background: $shadow-black-25;
+                transition: $transition-short;
+
+                p.content-section {
+                    margin: 0 0 5px;
+                    color: white;
+                    font-weight: 700;
+                    font-size: 80%;
+                    text-decoration: underline;
+                }
+
+                p.content-title {
+                    margin: 0;
+                    color: white;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    font-size: 150%;
+                    line-height: 110%;
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                .content-img {
+
+                    &::after {
+                        opacity: 0;
+                    }
+                }
+
+                .content-text {
+                    background: $shadow-black;
+
+                    p {
+                        color: $hot-pink;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,10 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Cantarell:400,700');
 @import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script');
 
-$font-roboto: 'Roboto', sans-serif;
+$font-cantarell: 'Cantarell', sans-serif;
 $font-lime: 'Nanum Pen Script', cursive;
 
 $ui-sm: 5px;
 $ui-md: 15px;
 $ui-lg: 40px;
 $ui-xl: 85px;
+
+$transition-extra-short: 50ms;
+$transition-short: 200ms;
+$transition-medium: 400ms;
+$transition-long: 600ms;
+$transition-extra-long: 1000ms;
+
+$tablet: "(min-width: 768px) and (max-width: 1023px)";
+$mobile: "(max-width: 767px)";

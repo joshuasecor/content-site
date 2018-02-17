@@ -13,7 +13,7 @@ export class AppService {
   ) { }
 
   private apiKey:string = 'api-key=572bfb4bc079402581df7d170435e659';
-  private contentUrl:string = 'https://api.nytimes.com/svc/topstories/v2/technology.json?' + this.apiKey;
+  private contentUrl:string = 'https://api.nytimes.com/svc/topstories/v2/tmagazine.json?' + this.apiKey;
 
   getContent(): Observable<ApiResult> {
     const results = this.http.get<ApiResult>(this.contentUrl);
