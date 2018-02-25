@@ -7,18 +7,24 @@ import { AppService } from './app.service'
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './app-routing.module';
+import { MusicComponent } from './music/music.component';
+import { LoadingComponent } from './core/loading/loading.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    MusicComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    InlineSVGModule
+    InlineSVGModule,
+    AppRoutingModule
   ],
   providers: [
     AppService

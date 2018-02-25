@@ -1,6 +1,10 @@
 <section id="home">
+
+  <div *ngIf="!loaded">
+    <app-loading></app-loading>
+  </div>
+
   <div class="home-wrapper wrapper-sm">
-    <!-- <h2 *ngIf="homeContent">{{ homeContent.num_results }} Results</h2> -->
     <div *ngIf="homeContentResults" class="home-content">
 
       <div *ngFor="let result of homeContentResults | slice:0:imagesToLoad" class="content-block" [ngClass]="{'loaded': imagesLoaded >= imagesToLoad}">
@@ -11,12 +15,19 @@
         </div>
 
         <div class="content-text">
-            <p class="content-section">{{ result.section }}</p>
-          <p class="content-title">{{ result.title }}</p>
+          <div class="hover-background">
+            <p class="content-section">
+              <span *ngIf="result.section">{{ result.section }}</span>
+              <span *ngIf="result.subsection">&ndash; {{ result.subsection }}</span>
+            </p>
+            <p class="content-title">{{ result.title }}</p>
+            <p *ngIf="result.published_date" class="content-created-date">{{ result.published_date | date:'fullDate' }}</p>
+          </div>
         </div>
 
       </div>
 
     </div>
   </div>
+  
 </section>

@@ -30,7 +30,7 @@
             .content-img {
 
                 &::after {
-                    background: linear-gradient(to bottom, $ocean-blue-25 0%, black 100%);
+                    background: $blue-gradient;
                     bottom: 0;
                     content: "";
                     left: 0;
@@ -53,11 +53,20 @@
                 position: absolute;
                 bottom: 0;
                 left: 0;
+                width: 100%;
                 z-index: 4;
                 margin-bottom: 4px;
-                padding: $ui-md;
-                background: $shadow-black-25;
-                transition: $transition-short;
+                background: $black-gradient;
+
+                .hover-background {
+                    padding: $ui-md;
+                    background: $shadow-black-0;
+                    transition: $transition-short;
+                }
+
+                p {
+                    transition: $transition-short;
+                }
 
                 p.content-section {
                     margin: 0 0 5px;
@@ -74,6 +83,20 @@
                     font-weight: 700;
                     font-size: 150%;
                     line-height: 110%;
+
+                    @media #{$tablet} {
+                        font-size: 125%;
+                    }
+
+                    @media #{$mobile} {
+                        font-size: 115%;
+                    }
+                }
+
+                p.content-created-date {
+                    margin: 5px 0 0;
+                    color: white;
+                    font-size: 75%;
                 }
             }
 
@@ -88,7 +111,9 @@
                 }
 
                 .content-text {
-                    background: $shadow-black;
+                    .hover-background {
+                        background: $shadow-black;
+                    }
 
                     p {
                         color: $hot-pink;

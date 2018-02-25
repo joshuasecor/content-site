@@ -1,16 +1,21 @@
 <div class="nav-wrapper">
   <section id="nav">
     <ul class="nav-list">
-      <li class="nav-logo">
-        <span [inlineSVG]="limeSVG"></span>
-        <span class="nav-logo-text">Lime</span>
-      </li>
-      <li>Home</li>
-      <li>Music</li>
-      <li>Games</li>
-      <li>Movies</li>
-      <li>TV</li>
-      <li>Food</li>
+      <a routerLink="/home">
+        <li class="nav-logo">
+          <span [inlineSVG]="limeSVG"></span>
+          <span class="nav-logo-text">Lime</span>
+        </li>
+      </a>
+      <a routerLink="/music">
+        <li>Music</li>
+      </a>
+      <a>
+        <li>Food</li>
+      </a>
+      <a>
+        <li>Art</li>
+      </a>
     </ul>
   </section>
 </div>
