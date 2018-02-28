@@ -15,5 +15,32 @@ $transition-medium: 400ms;
 $transition-long: 600ms;
 $transition-extra-long: 1000ms;
 
+$laptop: "(min-width: 1024px) and (max-width: 1200px)";
 $tablet: "(min-width: 768px) and (max-width: 1023px)";
 $mobile: "(max-width: 767px)";
+
+.center-align {
+    text-align: center;
+}
+
+.helper-text-outer {
+    margin: 0 auto;
+    width: 600px;
+    max-width: 100%;
+
+    .helper-text-inner {
+        padding: $ui-md;
+
+        a {
+            color: $ocean-blue;
+        }
+
+        pre {
+            background-color: $bg-off-white;
+            white-space: pre-wrap;
+            padding: $ui-md;
+            border: solid 1px $shadow-black-25;
+            border-radius: 2px;
+        }
+    }
+}

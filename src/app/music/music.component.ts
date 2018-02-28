@@ -16,7 +16,7 @@ export class MusicComponent implements OnInit {
   appService: AppService;
   songs: Observable<any[]>;
   songsCollections;
-  nextSong: Song = {
+  exampleSong: Song = {
     artist: 'Miami Horror',
     title: 'I Look To You',
     artwork_url: 'https://i1.sndcdn.com/artworks-000002407710-sfpeln-t500x500.jpg',
@@ -33,11 +33,6 @@ export class MusicComponent implements OnInit {
 
   save(song: Song) {
     this.songsCollections.add({ song });
-  }
-
-  doSomething() {
-    this.playerService.currentSong = this.nextSong;
-    console.log(this.playerService.currentSong);
   }
 
   changeSong(song: Song){

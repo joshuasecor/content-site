@@ -1,5 +1,14 @@
 <section id="home">
 
+  <div class="helper-text-outer">
+    <div class="helper-text-inner">
+      <h3>Welcome to Lime!</h3>
+      <p>I created this site to highlight some of my talents as a developer.</p>
+      <p>The app was built using Angular with Sass. You can check out the code on GitHub at <a href="https://github.com/joshuasecor/content-site" target="_blank">github.com/joshuasecor/content-site</a>.</p>
+      <p>This home page is grabbing content from a nytimes.com API.</p>
+    </div>
+  </div>
+
   <div *ngIf="!loaded">
     <app-loading></app-loading>
   </div>
@@ -8,22 +17,25 @@
     <div *ngIf="homeContentResults" class="home-content">
 
       <div *ngFor="let result of homeContentResults | slice:0:imagesToLoad" class="content-block" [ngClass]="{'loaded': imagesLoaded >= imagesToLoad}">
-        
-        <div class="content-img">
-          <img *ngIf="result.multimedia[4]" [src]="result.multimedia[4].url" (load)="loadImage()" />
-          <span *ngIf="!result.multimedia[4]" [inlineSVG]="limeSVG" (load)="loadImage()"></span>
-        </div>
 
-        <div class="content-text">
-          <div class="hover-background">
-            <p class="content-section">
-              <span *ngIf="result.section">{{ result.section }}</span>
-              <span *ngIf="result.subsection">&ndash; {{ result.subsection }}</span>
-            </p>
-            <p class="content-title">{{ result.title }}</p>
-            <p *ngIf="result.published_date" class="content-created-date">{{ result.published_date | date:'fullDate' }}</p>
+        <a [attr.href]="result.short_url" target="_blank">
+
+          <div class="content-img">
+            <img *ngIf="result.multimedia.length" [src]="result.multimedia[result.multimedia.length - 1].url" (load)="loadImage()" />
           </div>
-        </div>
+
+          <div class="content-text">
+            <div class="hover-background">
+              <p class="content-section">
+                <span *ngIf="result.section">{{ result.section }}</span>
+                <span *ngIf="result.subsection">&ndash; {{ result.subsection }}</span>
+              </p>
+              <p class="content-title">{{ result.title }}</p>
+              <p *ngIf="result.published_date" class="content-created-date">{{ result.published_date | date:'fullDate' }}</p>
+            </div>
+          </div>
+
+        </a>
 
       </div>
 

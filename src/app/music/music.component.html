@@ -1,4 +1,13 @@
 <section id="music">
+
+  <div class="helper-text-outer">
+    <div class="helper-text-inner">
+      <p>Click on one of the songs below and a SoundCloud music player component will render at the bottom of the screen. The component lives outside of this music tab, so when you navigate to other tabs the music continues to play.</p>
+      <p>The metadata for the songs is being stored in a simple Firebase database. The "Song" object looks like this:</p>
+      <pre>{{ exampleSong | json }}</pre>
+    </div>
+  </div>
+
   <div class="music-wrapper wrapper-sm">
     <div class="tracks-container">
       <div class="track" *ngFor="let track of songs | async">

@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   homeContent: ApiResult;
   homeContentResults: Results[];
 
-  public imagesToLoad:number = 15;
+  public imagesToLoad:number = 16;
   public imagesLoaded:number = 0;
   public loaded:boolean = false;
 
@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
       .subscribe(content => { 
         this.homeContent = content;
         this.homeContentResults = content.results;
-        if (this.homeContentResults.length < this.imagesToLoad) {
+        if (this.homeContent.num_results < this.imagesToLoad) {
           this.imagesToLoad = this.homeContentResults.length;
         };
       });

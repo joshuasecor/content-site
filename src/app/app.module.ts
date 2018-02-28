@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { MusicComponent } from './music/music.component';
 import { LoadingComponent } from './core/loading/loading.component';
 import { PlayerComponent } from './player/player.component';
+import { FoodComponent } from './food/food.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { PlayerComponent } from './player/player.component';
     MusicComponent,
     LoadingComponent,
     PlayerComponent,
-    SafePipe
+    SafePipe,
+    FoodComponent
   ],
   imports: [
     BrowserModule,

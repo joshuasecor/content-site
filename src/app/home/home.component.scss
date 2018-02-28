@@ -4,8 +4,12 @@
 .home-wrapper {
 
     .home-content {
-        column-count: 3;
+        column-count: 4;
         column-gap: 5px;
+
+        @media #{$laptop} {
+            column-count: 3;
+        }
 
         @media #{$tablet} {
             column-count: 2;
@@ -81,15 +85,15 @@
                     color: white;
                     text-transform: uppercase;
                     font-weight: 700;
-                    font-size: 150%;
+                    font-size: 110%;
                     line-height: 110%;
 
                     @media #{$tablet} {
-                        font-size: 125%;
+                        font-size: 100%;
                     }
 
                     @media #{$mobile} {
-                        font-size: 115%;
+                        font-size: 100%;
                     }
                 }
 

@@ -4,6 +4,21 @@
 .music-wrapper {
 
     .tracks-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+
+        @media #{$laptop} {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media #{$tablet} {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media #{$mobile} {
+            display: block;
+        }
 
         .track {
             height: 350px;
@@ -14,6 +29,16 @@
             position: relative;
             overflow: hidden;
 
+            @media #{$tablet} {
+                height: 300px;
+                width: 300px;
+            }
+    
+            @media #{$mobile} {
+                height: 250px;
+                width: 250px;
+            }
+
             .track-body {
                 height: 100%;
                 width: 100%;
@@ -22,6 +47,11 @@
                 background-size: cover;
                 background-position: center center;
                 background-repeat: no-repeat;
+                transition: $transition-medium;
+
+                &:hover {
+                    filter: brightness(1.25);
+                }
 
                 .track-text-wrapper {
                     background: $black-gradient;
@@ -36,13 +66,18 @@
                         max-height: 100%;
                         color: white;
                         padding-bottom: $ui-md;
+                        transition: $transition-short;
     
                         .track-artist {
                             font-weight: 700;
                             font-size: 200%;
-                            margin: 0 0 $ui-sm;
+                            margin: 0 0 10px;
                             padding: 0 $ui-md;
                             line-height: 1;
+
+                            @media #{$mobile} {
+                                font-size: 125%;
+                            }
                         }
     
                         .track-title {
@@ -51,6 +86,10 @@
                             margin: 0;
                             padding: 0 $ui-md;
                             line-height: 1;
+
+                            @media #{$mobile} {
+                                font-size: 100%;
+                            }
                         }
                     }
                 }

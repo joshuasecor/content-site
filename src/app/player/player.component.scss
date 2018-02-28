@@ -17,8 +17,9 @@
             position: absolute;
             top: -33px;
             left: 5px;
-            padding: 5px;
+            padding: 5px 10px;
             cursor: pointer;
+            background: $bg-white;
 
             &:hover {
                 opacity: 0.8;
