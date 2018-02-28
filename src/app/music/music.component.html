@@ -1,5 +1,16 @@
 <section id="music">
   <div class="music-wrapper wrapper-sm">
-    MUSIC!
+    <div class="tracks-container">
+      <div class="track" *ngFor="let track of songs | async">
+        <div class="track-body" (click)="changeSong(track.song)" [style.background-image]="'url('+track.song.artwork_url+')'">
+          <div class="track-text-wrapper">
+            <div class="track-text">
+              <p class="track-artist">{{ track.song.artist }}</p>
+              <p class="track-title">{{ track.song.title }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

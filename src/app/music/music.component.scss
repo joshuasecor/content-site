@@ -1,2 +1,60 @@
 @import '~sass/colors';
 @import '~sass/standards';
+
+.music-wrapper {
+
+    .tracks-container {
+
+        .track {
+            height: 350px;
+            width: 350px;
+            max-height: 100%;
+            max-width: 100%;
+            margin: 25px auto;
+            position: relative;
+            overflow: hidden;
+
+            .track-body {
+                height: 100%;
+                width: 100%;
+                cursor: pointer;
+                background: linear-gradient(to right, $ocean-blue, $hot-pink);
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+
+                .track-text-wrapper {
+                    background: $black-gradient;
+                    height: 100%;
+                    width: 100%;
+
+                    .track-text {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        max-height: 100%;
+                        color: white;
+                        padding-bottom: $ui-md;
+    
+                        .track-artist {
+                            font-weight: 700;
+                            font-size: 200%;
+                            margin: 0 0 $ui-sm;
+                            padding: 0 $ui-md;
+                            line-height: 1;
+                        }
+    
+                        .track-title {
+                            font-size: 100%;
+                            font-style: italic;
+                            margin: 0;
+                            padding: 0 $ui-md;
+                            line-height: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+@import '~sass/colors';
+@import '~sass/standards';
+
+#player {
+    height: 110px;
+
+    .player {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: $bg-white;
+        z-index: 5;
+        height: 110px;
+
+        .player-close {
+            position: absolute;
+            top: -33px;
+            left: 5px;
+            padding: 5px;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        .divider {
+            height: 3px;
+            width: 100%;
+            background: linear-gradient(to right, $ocean-blue, $hot-pink);
+        }
+    }
+
+}

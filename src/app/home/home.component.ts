@@ -21,8 +21,8 @@ export class HomeComponent implements OnInit {
   homeContent: ApiResult;
   homeContentResults: Results[];
 
-  public imagesToLoad = 15;
-  public imagesLoaded = 0;
+  public imagesToLoad:number = 15;
+  public imagesLoaded:number = 0;
   public loaded:boolean = false;
 
   ngOnInit() {

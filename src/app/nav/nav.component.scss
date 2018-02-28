@@ -38,7 +38,6 @@
                 padding: 0 25px;
                 height: 60px;
                 flex: none;
-                pointer-events: none;
         
                 span {
                     display: inline-block;
@@ -51,6 +50,12 @@
                     margin-left: 5px;
                     font: 340% $font-lime;
                     line-height: 65px;
+                }
+
+                &:hover {
+                    .nav-logo-text {
+                        color: $lime;
+                    }
                 }
             }
         }
