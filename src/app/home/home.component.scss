@@ -4,34 +4,39 @@
 .home-wrapper {
 
     .home-content {
-        column-count: 4;
-        column-gap: 5px;
-
-        @media #{$laptop} {
-            column-count: 3;
-        }
-
-        @media #{$tablet} {
-            column-count: 2;
-        }
-
-        @media #{$mobile} {
-            column-count: 1;
-        }
+        text-align: center;
 
         .content-block {
-            width: 100%;
+            width: 25%;
+            margin: 15px;
+            display: inline-block;
             height: auto;
             overflow: hidden;
             position: relative;
             transition: $transition-short;
-            opacity: 0;
+
+            @media #{$laptop} {
+                width: 33%;
+            }
+    
+            @media #{$tablet} {
+                width: 50%;
+            }
+    
+            @media #{$mobile} {
+                width: 100%;
+                margin: 0;
+            }
 
             &.loaded {
                 opacity: 1;
             }
             
             .content-img {
+                height: 300px;
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
 
                 &::after {
                     background: $blue-gradient;
@@ -43,7 +48,6 @@
                     right: 0;
                     top: 0;
                     z-index: 2;
-                    margin-bottom: 4px;
                     transition: $transition-short;
                 }
 
@@ -59,7 +63,6 @@
                 left: 0;
                 width: 100%;
                 z-index: 4;
-                margin-bottom: 4px;
                 background: $black-gradient;
 
                 .hover-background {

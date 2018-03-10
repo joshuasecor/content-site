@@ -15,7 +15,7 @@ export class PlayerComponent implements OnInit {
 
   constructor(
     private appService: AppService,
-    private playerService: PlayerService
+    public playerService: PlayerService
   ) { }
 
   currentSong: Song;

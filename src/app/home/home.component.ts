@@ -21,9 +21,9 @@ export class HomeComponent implements OnInit {
   homeContent: ApiResult;
   homeContentResults: Results[];
 
-  public imagesToLoad:number = 16;
-  public imagesLoaded:number = 0;
-  public loaded:boolean = false;
+  // public imagesToLoad:number = 12;
+  // public imagesLoaded:number = 0;
+  // private loaded:boolean = false;
 
   ngOnInit() {
     this.getHomeContent();
@@ -34,17 +34,17 @@ export class HomeComponent implements OnInit {
       .subscribe(content => { 
         this.homeContent = content;
         this.homeContentResults = content.results;
-        if (this.homeContent.num_results < this.imagesToLoad) {
-          this.imagesToLoad = this.homeContentResults.length;
-        };
+        // if (this.homeContent.num_results < this.imagesToLoad) {
+        //   this.imagesToLoad = this.homeContentResults.length;
+        // };
       });
   }
 
-  public loadImage() {
-    this.imagesLoaded++;
-    if (this.imagesLoaded >= this.imagesToLoad) {
-      this.loaded = true;
-    }
-  }
+  // public loadImage() {
+  //   this.imagesLoaded++;
+  //   if (this.imagesLoaded >= this.imagesToLoad) {
+  //     this.loaded = true;
+  //   };
+  // }
 
 }

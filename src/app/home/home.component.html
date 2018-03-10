@@ -9,19 +9,21 @@
     </div>
   </div>
 
-  <div *ngIf="!loaded">
+  <!-- <div *ngIf="!loaded">
     <app-loading></app-loading>
-  </div>
+  </div> -->
 
   <div class="home-wrapper wrapper-sm">
     <div *ngIf="homeContentResults" class="home-content">
 
-      <div *ngFor="let result of homeContentResults | slice:0:imagesToLoad" class="content-block" [ngClass]="{'loaded': imagesLoaded >= imagesToLoad}">
+      <div *ngFor="let result of homeContentResults | slice:0:imagesToLoad" class="content-block">
 
         <a [attr.href]="result.short_url" target="_blank">
 
-          <div class="content-img">
-            <img *ngIf="result.multimedia.length" [src]="result.multimedia[result.multimedia.length - 1].url" (load)="loadImage()" />
+          <div class="content-img"  *ngIf="result.multimedia.length" [style.background-image]="'url(' + result.multimedia[result.multimedia.length - 1].url + ')'">
+          </div>
+
+          <div class="content-img"  *ngIf="!result.multimedia.length" [style.background-image]="'linear-gradient(to right, #3323ff, #ff0090)'">
           </div>
 
           <div class="content-text">
